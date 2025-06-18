@@ -14,6 +14,13 @@ lastName string
 birthdate string
 }
 
+
+// attaching func to a struct : basically called method
+// the arg is called receiver | u User 
+func ( u User )outputUserDetails(){
+	fmt.Println(u.firstName, u.lastName, u.birthdate)
+}
+
 // main func 
 func main() {
 
@@ -35,12 +42,10 @@ func main() {
 
 	// fmt.Println(firstName, lastName, birthdate)
 
-	outputUserDetails(appUser)
+	appUser.outputUserDetails()
 }
 
-func outputUserDetails(u User){
-	fmt.Println(u.firstName, u.lastName, u.birthdate)
-}
+
 
 func getUserData(promptText string) string {
 	fmt.Print(promptText)
